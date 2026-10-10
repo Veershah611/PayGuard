@@ -1,0 +1,20 @@
+# Build trees
+build/
+build-*/
+cmake-build-*/
+out/
+
+# Run outputs (keep the folder)
+output/*
+!output/.gitkeep
+
+# Generated synthetic data
+data/generated/
+
+# Editors / OS
+.vs/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+compile_commands.json

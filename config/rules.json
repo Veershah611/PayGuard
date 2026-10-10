@@ -1,0 +1,19 @@
+{
+  "engine": {
+    "threads": 0,
+    "queue_capacity": 1024,
+    "batch_size": 64,
+    "decline_unknown_city": true
+  },
+  "decision": {
+    "flag_threshold": 40,
+    "decline_threshold": 70
+  },
+  "rules": [
+    { "type": "velocity",           "enabled": true, "score": 45, "max_txns": 5, "window_seconds": 60 },
+    { "type": "amount_anomaly",     "enabled": true, "score": 40, "min_history": 10, "std_devs": 3.0, "scale": "log" },
+    { "type": "geo_impossibility",  "enabled": true, "score": 45, "max_speed_kmh": 900, "min_distance_km": 100 },
+    { "type": "blocked_merchant",   "enabled": true, "score": 80 },
+    { "type": "round_amount_burst", "enabled": true, "score": 40, "min_count": 3, "window_seconds": 600, "multiple": 1000 }
+  ]
+}
